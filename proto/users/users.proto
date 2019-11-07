@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package users;
+
+service UsersService {
+    rpc CreateUser(User) returns (Response) {}
+    rpc UpdateUser(User) returns (Response) {}
+    rpc DeleteUser(User) returns (Response) {}
+    rpc GetUserByPersonID(User) returns (Response) {}
+    rpc GetUserByPersonIDAndPassword(User) returns (Response) {}
+}
+
+message User {
+    string id = 1;
+    string person_id = 2;
+    string person_name = 3;
+    string person_initials = 4;
+    int32 org_function_id = 5;
+    string person_position = 6;
+    int64 person_date_registered = 7;
+    int64 person_subscription_finish = 8;
+    string person_email = 9;
+    string person_telephone = 10;
+    string person_fax = 11;
+    string person_address = 12;
+    int32 category_id = 13;
+    string person_main_hired_company = 14;
+    string person_contractor_department = 15;
+    string person_subcontractor = 16;
+    string person_password = 17;
+    int32 person_is_online = 18;
+    int32 is_active = 19;
+    int32 is_deleted = 20;
+}
+
+message Response {
+    bool created = 1;
+    bool updated = 2;
+    bool deleted = 3;
+    User user = 4;
+    repeated User users = 5;
+}
