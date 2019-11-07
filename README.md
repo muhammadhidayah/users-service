@@ -1,5 +1,5 @@
 # users-service
-User service is service to handle all user. this service implement clean architecture. using postgre as database server.
+User service is service to handle all user. this service implement clean architecture. using postgre as database server and gorm to query in database. this apps using GRPC to communication.
 this service will handler 5 Task :
 1. CreateUser
 2. UpdateUser
