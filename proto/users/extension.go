@@ -1,4 +1,4 @@
-package users
+package go_micro_api_user
 
 import (
 	"github.com/jinzhu/gorm"
