@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package user;
+package inact.srv.user;
 
-service UsersService {
+service UserService {
     rpc CreateUser(User) returns (Response) {}
     rpc UpdateUser(User) returns (Response) {}
     rpc DeleteUser(User) returns (Response) {}

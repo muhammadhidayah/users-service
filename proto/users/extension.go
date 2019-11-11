@@ -1,4 +1,4 @@
-package user
+package inact_srv_user
 
 import (
 	"github.com/jinzhu/gorm"

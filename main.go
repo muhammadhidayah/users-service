@@ -22,7 +22,7 @@ func main() {
 	db.AutoMigrate(&pb.User{})
 
 	srv := micro.NewService(
-		micro.Name("inact.user"),
+		micro.Name("inact.srv.user"),
 	)
 
 	srv.Init()
@@ -31,7 +31,7 @@ func main() {
 	ucase := usecase.NewUsersUsecase(repo)
 	handler := deliveryGRPC.UserHandlerGRPC{ucase}
 
-	pb.RegisterUsersServiceHandler(srv.Server(), &handler)
+	pb.RegisterUserServiceHandler(srv.Server(), &handler)
 
 	if err := srv.Run(); err != nil {
 		log.Fatal(err)
