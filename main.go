@@ -9,6 +9,7 @@ import (
 	deliveryGRPC "github.com/muhammadhidayah/users-service/users/delivery/grpc"
 	"github.com/muhammadhidayah/users-service/users/repository"
 	"github.com/muhammadhidayah/users-service/users/usecase"
+	k8s "github.com/micro/kubernetes/go/micro"
 )
 
 func main() {
@@ -21,7 +22,7 @@ func main() {
 
 	db.AutoMigrate(&pb.User{})
 
-	srv := micro.NewService(
+	srv := k8s.NewService(
 		micro.Name("inact.srv.user"),
 	)
 
