@@ -22,7 +22,7 @@ func main() {
 	db.AutoMigrate(&pb.User{})
 
 	srv := micro.NewService(
-		micro.Name("go.micro.srv.user"),
+		micro.Name("inact.srv.user"),
 	)
 
 	srv.Init()
