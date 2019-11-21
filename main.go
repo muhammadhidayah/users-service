@@ -5,7 +5,6 @@ import (
 	"log"
 
 	"github.com/micro/go-micro"
-	"github.com/micro/go-plugins/registry/kubernetes"
 	pb "github.com/muhammadhidayah/users-service/proto/users"
 	deliveryGRPC "github.com/muhammadhidayah/users-service/users/delivery/grpc"
 	"github.com/muhammadhidayah/users-service/users/repository"
@@ -22,11 +21,8 @@ func main() {
 
 	db.AutoMigrate(&pb.User{})
 
-	registry := kubernetes.NewRegistry()
-
 	srv := micro.NewService(
 		micro.Name("go.micro.srv.user"),
-		micro.Registry(registry),
 	)
 
 	srv.Init()
