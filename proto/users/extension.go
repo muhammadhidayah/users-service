@@ -1,4 +1,4 @@
-package inact_srv_user
+package go_micro_srv_user
 
 import (
 	"github.com/jinzhu/gorm"

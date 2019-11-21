@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package inact.srv.user;
+package go.micro.srv.user;
 
 service UserService {
     rpc CreateUser(User) returns (Response) {}

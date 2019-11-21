@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+        - name: user-service
+          image: asia.gcr.io/green-syntax-257608/user-service
+          imagePullPolicy: Always
+          command: [
+            "./user-service",
+            "--selector=static",
+            "--server_address=:8080"
+          ]
+          env:
+          - name: DB_HOST
+            value
